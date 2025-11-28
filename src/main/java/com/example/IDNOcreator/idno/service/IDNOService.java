@@ -1,11 +1,17 @@
 package com.example.IDNOcreator.idno.service;
 
+import com.example.IDNOcreator.common.database.dao.IdnoCreatorDao;
+import com.example.IDNOcreator.common.database.entity.IdnoCreator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
 public class IDNOService {
+
+    @Autowired
+    IdnoCreatorDao idnoCreatorDao;
 
     private final char[] pidCharArray = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
             'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
@@ -46,6 +52,10 @@ public class IDNOService {
         String newResidentString = String.valueOf(firstChar) + String.valueOf(secondChar) + bodyString;
 
         newResidentString += newCheckCode(newResidentString);
+
+        IdnoCreator idnoCreator = new IdnoCreator();
+        idnoCreator.setResIdno(newResidentString);
+        idnoCreatorDao.save(idnoCreator);
 
         return newResidentString;
     }
