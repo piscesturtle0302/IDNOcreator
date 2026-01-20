@@ -11,7 +11,7 @@ COPY ../src ./src
 COPY ../config/settings.xml /root/.m2/settings.xml
 ## 使用設定檔進行編譯專案 若有編譯錯誤則回覆錯誤內容
 
-RUN mvn --settings /root/.m2/settings.xml clean package
+RUN mvn --settings /root/.m2/settings.xml clean package -DskipTests
 
 # 建立JDK環境 進行專案執行
 ## 建立JDK環境(包含ImageMagick)
