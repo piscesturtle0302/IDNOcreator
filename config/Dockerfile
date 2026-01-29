@@ -1,7 +1,7 @@
 #建立MAVEN環境 進行專案編譯
 
 ## 建立MAVEN環境
-FROM nexus-s.tmnewa.com.tw/ecrd1-docker-group/library/maven:3.9.11-amazoncorretto-21 AS build
+FROM nexus.tmnewa.com.tw/ecrd1-docker-group/library/maven:3.9.11-amazoncorretto-21 AS build
 ## 設定工作目錄
 WORKDIR /app
 ## 複製專案檔案
@@ -15,7 +15,7 @@ RUN mvn --settings /root/.m2/settings.xml clean package -DskipTests
 
 # 建立JDK環境 進行專案執行
 ## 建立JDK環境(包含ImageMagick)
-FROM nexus-s.tmnewa.com.tw/ecrd1-docker-group/library/openjdk:21-slim AS runtime
+FROM nexus.tmnewa.com.tw/ecrd1-docker-group/library/openjdk:21-slim AS runtime
 ## 轉出PORT
 EXPOSE 8080
 ## 複製編譯好的jar檔案

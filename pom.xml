@@ -27,7 +27,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>tmnewa</id>
-			<url>http:https://nexus.tmnewa.com.tw/repository/ecrd-maven-group/</url>
+			<url>https://nexus.tmnewa.com.tw/repository/ecrd-maven-group/</url>
 		</pluginRepository>
 	</pluginRepositories>
 
