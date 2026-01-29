@@ -1,4 +1,8 @@
 # This is ID number creator. Create ARC number for testing purpose.
+## SQL Server
+```
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=SqlServerTmnewa8F" -p 1433:1433 --name SqlServer2019 -d mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+```
 
 ## Docker
 ### 建立 Docker 映像檔
